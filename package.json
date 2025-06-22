@@ -1,6 +1,16 @@
 {
   "name": "rr7-cf",
   "description": "Build a full-stack web application with React Router 7.",
+  "type": "module",
+  "scripts": {
+    "build": "react-router build",
+    "typegen": "wrangler types && react-router typegen",
+    "check": "tsc && react-router build && wrangler deploy --dry-run",
+    "deploy": "wrangler deploy",
+    "dev": "react-router dev",
+    "preview": "bun build && vite preview",
+    "typecheck": "bun typegen && tsc -b"
+  },
   "cloudflare": {
     "label": "React Router Framework Starter",
     "products": [
@@ -16,32 +26,23 @@
     "publish": true
   },
   "dependencies": {
-    "isbot": "5.1.26",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "react-router": "7.5.2"
+    "isbot": "^5.1.28",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router": "^7.6.2"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "1.2.4",
-    "@react-router/dev": "7.5.2",
-    "@tailwindcss/vite": "4.1.4",
-    "@types/node": "22.15.19",
-    "@types/react": "19.0.1",
-    "@types/react-dom": "19.0.1",
-    "tailwindcss": "4.1.1",
-    "typescript": "5.8.3",
-    "vite": "6.3.5",
-    "vite-tsconfig-paths": "5.1.4",
-    "wrangler": "4.16.1"
-  },
-  "scripts": {
-    "build": "react-router build",
-    "cf-typegen": "wrangler types && react-router typegen",
-    "check": "tsc && react-router build && wrangler deploy --dry-run",
-    "deploy": "wrangler deploy",
-    "dev": "react-router dev",
-    "preview": "npm run build && vite preview",
-    "typecheck": "npm run typegen && tsc -b"
-  },
-  "type": "module"
+    "@cloudflare/vite-plugin": "^1.7.4",
+    "@react-router/dev": "^7.6.2",
+    "@tailwindcss/vite": "^4.1.10",
+    "@types/node": "^24.0.3",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "tailwindcss": "^4.1.10",
+    "taze": "^^19.1.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vite-tsconfig-paths": "^5.1.4",
+    "wrangler": "^4.20.5"
+  }
 }
